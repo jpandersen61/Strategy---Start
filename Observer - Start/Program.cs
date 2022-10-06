@@ -18,7 +18,7 @@ namespace PizzaApp
             Console.WriteLine("Pizza order: Ham and Pepperoni");
             string[] order2 = { "Ham", "Pepperoni" };
 
-            //Add e.g. a drink to the order 
+            //Add a drink e.g. a Coke to the order 
             pizzaMan.TakeOrder(order2, "Coke", 25);
 
             Console.WriteLine();
