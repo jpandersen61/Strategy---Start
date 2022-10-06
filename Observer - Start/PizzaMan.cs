@@ -4,12 +4,17 @@ using System.Text;
 
 namespace PizzaApp
 {
-    public class PizzaMan : IObserver
+
+
+public enum TimeOfDay { Lunch, Evening, Night };
+    
+public class PizzaMan : IObserver
     {
         public IPizzaFactory PizzaFactory { get; set; }
         public PizzaOven PizzaOven { get; set; }
        
-      
+        
+
         public PizzaMan(PizzaOven pizzaOven)
         {
             /*
@@ -20,6 +25,7 @@ namespace PizzaApp
             this.PizzaOven = pizzaOven;
             PizzaOven.AddObserver(this);
             PizzaFactory = new PizzaFactory();
+            
         }
 
         public void TakeOrder(String[] additionals)
@@ -29,7 +35,7 @@ namespace PizzaApp
             */
 
             AbstractPizza pizza = PizzaFactory.MakePizza(additionals);
-
+           
             PizzaOven.preparePizza(new PizzaToMenuAdapter(pizza));
         }
 
